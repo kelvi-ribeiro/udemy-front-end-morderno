@@ -1,0 +1,10 @@
+#header{
+    color:green;
+}
+
+nav a {
+    background: green;
+   &:hover{
+        background: red;
+    }
+}

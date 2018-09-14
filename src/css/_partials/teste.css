@@ -1,0 +1,7 @@
+#header {
+  color: green; }
+
+nav a {
+  background: green; }
+  nav a:hover {
+    background: red; }
