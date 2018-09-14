@@ -1,0 +1,8 @@
+/* Existe duas formas de escrever arquivos sass:
+nomeArquivo.scss: (Sintaxe parecia com o css) 
+nomeArquivo.sass (Sintaxe que utiliza tabulações) */
+
+.header-animado {
+    $h: 300px;
+    height: $h;
+}
