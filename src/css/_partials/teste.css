@@ -1,14 +1,23 @@
 div {
-  border-radius: 10px; }
+  border-radius: 15px; }
 
 span {
-  border-radius: 10px; }
+  border-radius: 50px; }
 
-.botao, .bota-primary, .bota-danger {
+.botao, .botao-danger, .botao-primary {
   padding: 15px; }
 
-.bota-primary {
-  background: blue; }
+.botao-danger {
+  background: green; }
+  .botao-danger:hover {
+    background: #004d00; }
 
-.bota-danger {
-  background: red; }
+.botao-primary {
+  background: blue; }
+  .botao-primary:hover {
+    background: #000066; }
+
+.menu {
+  height: 0; }
+  .menu--opened {
+    height: auto; }

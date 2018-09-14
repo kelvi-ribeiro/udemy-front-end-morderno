@@ -1,5 +1,5 @@
-@mixin borda-redonda{
-    border-radius:10px;
+@mixin borda-redonda($raio:15px){
+    border-radius:$raio;
 }
 
 div{
@@ -7,20 +7,40 @@ div{
 }
 
 span{
-    @include borda-redonda;
+    @include borda-redonda(50px);
 }
 
 .botao{
     padding: 15px;
 }
 
-.bota-primary{
-    @extend .botao;
-    background: blue;
+
+@function escurece($cor,$porcentagem:30%){
+    @return darken($cor,$porcentagem);
 }
 
 
-.bota-danger{
+.botao-danger{
+    $bg:green;
     @extend .botao;
-    background: red;
+    background: $bg;
+    &:hover{
+        background: escurece($bg,10%);
+    }    
 }
+.botao-primary{
+    $bg:blue;
+    @extend .botao;
+    background: $bg;
+    &:hover{
+        background:escurece($bg)
+    }
+}
+
+.menu{
+    height: 0;
+    &--opened{
+        height: auto;
+    }
+}
+
