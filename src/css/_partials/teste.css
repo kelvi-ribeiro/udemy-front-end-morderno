@@ -1,7 +1,14 @@
-#header {
-  color: green; }
+div {
+  border-radius: 10px; }
 
-nav a {
-  background: green; }
-  nav a:hover {
-    background: red; }
+span {
+  border-radius: 10px; }
+
+.botao, .bota-primary, .bota-danger {
+  padding: 15px; }
+
+.bota-primary {
+  background: blue; }
+
+.bota-danger {
+  background: red; }

@@ -1,10 +1,26 @@
-#header{
-    color:green;
+@mixin borda-redonda{
+    border-radius:10px;
 }
 
-nav a {
-    background: green;
-   &:hover{
-        background: red;
-    }
+div{
+    @include borda-redonda;
+}
+
+span{
+    @include borda-redonda;
+}
+
+.botao{
+    padding: 15px;
+}
+
+.bota-primary{
+    @extend .botao;
+    background: blue;
+}
+
+
+.bota-danger{
+    @extend .botao;
+    background: red;
 }
