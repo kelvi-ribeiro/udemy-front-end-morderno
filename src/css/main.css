@@ -1,6 +1,0 @@
-@charset "UTF-8";
-/* Existe duas formas de escrever arquivos sass:
-nomeArquivo.scss: (Sintaxe parecia com o css) 
-nomeArquivo.sass (Sintaxe que utiliza tabulações) */
-.header-animado {
-  height: 300px; }
