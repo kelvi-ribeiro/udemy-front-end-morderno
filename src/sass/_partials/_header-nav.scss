@@ -4,6 +4,9 @@
     .js &{
         height: $h;
         overflow: hidden;
+        .container{
+            height: 100%;
+        }
     }
     &__logo{
         display: inline-block;
@@ -21,6 +24,8 @@
             border: none;
             background: transparent;
             color:white;
+            font-size:2em;
+            padding: 0 .5em;
             &:hover,&:focus{
                 background: lighten($main-color, 5%)
             }
