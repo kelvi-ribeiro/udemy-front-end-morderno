@@ -4,6 +4,9 @@ nomeArquivo.scss: (Sintaxe parecia com o css)
 nomeArquivo.sass (Sintaxe que utiliza tabulações) */
 .header-nav {
   background-color: #84b8af; }
+  .js .header-nav {
+    height: 50px;
+    overflow: hidden; }
   .header-nav__logo {
     display: inline-block;
     max-width: 350px;
@@ -12,6 +15,15 @@ nomeArquivo.sass (Sintaxe que utiliza tabulações) */
     top: 10x; }
   .header-nav__hamburgger {
     display: none; }
+    .js .header-nav__hamburgger {
+      display: inline-block;
+      float: right;
+      height: 100%;
+      border: none;
+      background: transparent;
+      color: white; }
+      .js .header-nav__hamburgger:hover, .js .header-nav__hamburgger:focus {
+        background: #74aea5; }
   .header-nav__menu {
     list-style: none;
     margin: 0;
