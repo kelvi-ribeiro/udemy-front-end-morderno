@@ -2,5 +2,9 @@
 /* Existe duas formas de escrever arquivos sass:
 nomeArquivo.scss: (Sintaxe parecia com o css) 
 nomeArquivo.sass (Sintaxe que utiliza tabulações) */
+.header-nav {
+  background-color: #84b8af; }
+
 .header-animado {
+  background-color: #64a59a;
   height: 300px; }
