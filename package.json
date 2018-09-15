@@ -8,6 +8,7 @@
     "font-awesome": "~4.7.0"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
     "node-sass": "~3.13.0"
   },
   "scripts": {
@@ -20,7 +21,7 @@
     "create:dir:fontawesome": "mkdir -p src/components/font-awesome && cp -r node_modules/font-awesome/css src/components/font-awesome && cp -r node_modules/font-awesome/fonts src/components/font-awesome",
     "gulp": "gulp",
     "nodesass": "node-sass",
-    "nodesass:watch": "npm run nodesass -- --watch src/sass -o src/css"
+    "nodesass:watch": "npm run nodesass -- --watch src/sass -o src/css"    
   },
   "author": "Kelvi Martins <kelvi.ribeiro@unigranrio.br>",
   "license": "MIT"
