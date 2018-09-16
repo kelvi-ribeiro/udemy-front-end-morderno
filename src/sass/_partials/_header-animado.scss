@@ -1,6 +1,7 @@
 
 .header-animado {
     $h: 300px;
+    $largura_cenario:2400px;
     background-color:$main-color;
     padding-top:96px;
     margin-bottom: 0;
@@ -40,10 +41,22 @@
                 position: absolute;
                 top: 0;
                 left:0;
-                right: 0;
+                width: $largura_cenario * 2;
+            }
+            @keyframes anima_cenario {
+                from{
+                    transform: translateX(-50%) 
+                    translateZ(0);
+                }
+                to{
+                    transform: translateX(0%)
+                     translateZ(0);
+
+                }                
             }
             .nuvens{
-                background-image: url(../imagens/cenario_nuvens.png)
+                background-image: url(../imagens/cenario_nuvens.png);
+                animation:anima_cenario 30s linear infinite;
             }
         }
     }

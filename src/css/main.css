@@ -88,6 +88,12 @@ h1, h2, h3, h4, h5, h6, .title {
           position: absolute;
           top: 0;
           left: 0;
-          right: 0; }
+          width: 4800px; }
+      @keyframes anima_cenario {
+        from {
+          transform: translateX(-50%) translateZ(0); }
+        to {
+          transform: translateX(0%) translateZ(0); } }
         .header-animado__ilustra .nuvens {
-          background-image: url(../imagens/cenario_nuvens.png); } }
+          background-image: url(../imagens/cenario_nuvens.png);
+          animation: anima_cenario 30s linear infinite; } }
