@@ -1,7 +1,8 @@
 /* Existe duas formas de escrever arquivos sass:
 nomeArquivo.scss: (Sintaxe parecia com o css) 
 nomeArquivo.sass (Sintaxe que utiliza tabulações) */
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 @import '_variables';
+@import '_base';
 @import '_partials/_header-nav';
 @import '_partials/_header-animado';

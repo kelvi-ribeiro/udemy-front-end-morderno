@@ -2,6 +2,11 @@
 /* Existe duas formas de escrever arquivos sass:
 nomeArquivo.scss: (Sintaxe parecia com o css) 
 nomeArquivo.sass (Sintaxe que utiliza tabulações) */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+h1, h2, h3, h4, h5, h6, .title {
+  font-family: 'Open Sans','Helvetica Neue',Ariral,sans-serif;
+  font-weight: bold; }
+
 .header-nav {
   background-color: #84b8af; }
   .js .header-nav {
@@ -49,5 +54,13 @@ nomeArquivo.sass (Sintaxe que utiliza tabulações) */
       display: block; }
 
 .header-animado {
-  background-color: #64a59a;
-  height: 300px; }
+  background-color: #64a59a; }
+  .header-animado .header-animado__title {
+    color: #00151a;
+    font-size: 38px;
+    font-weight: bold; }
+  .header-animado .header-animado__subtitle {
+    color: white;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1.5; }
