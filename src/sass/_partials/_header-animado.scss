@@ -43,6 +43,11 @@
                 left:0;
                 width: $largura_cenario * 2;
             }
+            @mixin anima($imagem,$segundos,$direcao){
+                $imagem: str-slice(quote($imagem), 27,str-length(quote($imagem)));                                 
+                background-image: url(../imagens/cenario_#{$imagem}.png);
+                animation:anima_cenario #{$segundos} linear infinite #{$direcao} ;
+            }
             @keyframes anima_cenario {
                 from{
                     transform: translateX(-50%) 
@@ -55,26 +60,23 @@
                 }                
             }
             .nuvens{
-                background-image: url(../imagens/cenario_nuvens.png);
-                animation:anima_cenario 90s linear infinite reverse  ;
+              @include anima(&,90s,'reverse')
             }
             .casas{
-                background-image: url(../imagens/cenario_casas.png);
-                animation:anima_cenario 30s linear infinite reverse;
+              @include anima(&,30s,'reverse')
             }
             .rua{
-                background-image: url(../imagens/cenario_rua.png);
-                animation:anima_cenario 30s linear infinite reverse;
+             @include anima(&,30s,'reverse')
             }
             .carrosCima{
-                background-image: url(../imagens/cenario_carrosCima.png);
-                animation:anima_cenario 15s linear infinite reverse;
+                @include anima(&,15s,'reverse')
             }
             .carrosBaixo{
-                background-image: url(../imagens/cenario_carrosBaixo.png);
-                animation:anima_cenario 15s linear infinite ;
+                @include anima(&,15s,null)
             }
         }
     }
     
 }
+
+
