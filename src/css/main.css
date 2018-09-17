@@ -81,7 +81,23 @@ h1, h2, h3, h4, h5, h6, .title {
       .header-animado__ilustra {
         background-image: url(../imagens/cenario_bg.png);
         height: 300px;
-        position: relative; }
+        position: relative;
+        /* Usando do meu mixin
+            .nuvens{
+              @include anima(&,90s,'reverse')
+            }
+            .casas{
+              @include anima(&,30s,'reverse')
+            }
+            .rua{
+             @include anima(&,30s,'reverse')
+            }
+            .carrosCima{
+                @include anima(&,15s,'reverse')
+            }
+            .carrosBaixo{
+                @include anima(&,15s,null)
+            } */ }
         .header-animado__ilustra > div {
           display: block;
           height: 100%;
@@ -102,10 +118,10 @@ h1, h2, h3, h4, h5, h6, .title {
           animation: anima_cenario 30s linear infinite reverse; }
         .header-animado__ilustra .rua {
           background-image: url(../imagens/cenario_rua.png);
-          animation: anima_cenario 30s linear infinite reverse; }
+          animation: anima_cenario 30s linear infinete reverse; }
         .header-animado__ilustra .carrosCima {
           background-image: url(../imagens/cenario_carrosCima.png);
           animation: anima_cenario 15s linear infinite reverse; }
         .header-animado__ilustra .carrosBaixo {
           background-image: url(../imagens/cenario_carrosBaixo.png);
-          animation: anima_cenario 15s linear infinite ; } }
+          animation: anima_cenario 15s linear infinite; } }

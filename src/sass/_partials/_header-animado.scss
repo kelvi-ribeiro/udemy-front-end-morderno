@@ -43,11 +43,19 @@
                 left:0;
                 width: $largura_cenario * 2;
             }
-            @mixin anima($imagem,$segundos,$direcao){
-                $imagem: str-slice(quote($imagem), 27,str-length(quote($imagem)));                                 
-                background-image: url(../imagens/cenario_#{$imagem}.png);
-                animation:anima_cenario #{$segundos} linear infinite #{$direcao} ;
-            }
+            
+            //Criando mixin baseado na minha solução
+            //@mixin anima($imagem,$segundos,$direcao){
+              //  $imagem: str-slice(quote($imagem), 27,str-length(quote($imagem)));                                 
+               // background-image: url(../imagens/cenario_#{$imagem}.png);
+                //animation:anima_cenario #{$segundos} linear infinite #{$direcao} ;
+           // }
+
+           @mixin anima($imagem,$tipo_anima:'90s linear infinite reverse'){                                               
+            background-image: url(../imagens/#{$imagem}.png);
+            animation:anima_cenario #{$tipo_anima};
+        }
+             
             @keyframes anima_cenario {
                 from{
                     transform: translateX(-50%) 
@@ -59,6 +67,27 @@
 
                 }                
             }
+            $items:(  
+            nuvens:null,  
+            casas:'30s linear infinite reverse',
+            rua:'30s linear infinete reverse',
+            carrosCima:'15s linear infinite reverse',
+            carrosBaixo:'15s linear infinite'
+            );
+
+            @each $key,$valor in $items{
+                @if $valor{
+                    .#{$key}{
+                        @include anima('cenario_#{$key}',$valor);
+                    }
+                
+                }@else{
+                   .#{$key}{
+                            @include anima('cenario_#{$key}');
+                                    }
+                                }
+                            }
+            /* Usando do meu mixin
             .nuvens{
               @include anima(&,90s,'reverse')
             }
@@ -73,7 +102,7 @@
             }
             .carrosBaixo{
                 @include anima(&,15s,null)
-            }
+            } */
         }
     }
     
