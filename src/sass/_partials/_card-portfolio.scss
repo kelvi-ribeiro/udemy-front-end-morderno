@@ -34,12 +34,13 @@
         img{
             max-width: 100%;
             opacity: .5;
+            transition: opacity .3s linear, transform 1s ease-in;
         }
     }
     &:hover{
     img{
         opacity: 1;
-        transition: opacity .3s linear;
+        transform: scale(1.15) rotate(-5deg);
     }
     .card-portfolio__btn{
         background: lighten($main-color,30%);
@@ -58,6 +59,9 @@
         border-radius: 0;
         width: 100px;
         transition: all .3s;
+        margin-left: auto;
+        position: relative;
+        top: 1px;
         
     }
 }

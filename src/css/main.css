@@ -158,10 +158,11 @@ h1, h2, h3, h4, h5, h6, .title {
     overflow: hidden; }
     .card-portfolio__imagem img {
       max-width: 100%;
-      opacity: .5; }
+      opacity: .5;
+      transition: opacity .3s linear, transform 1s ease-in; }
   .card-portfolio:hover img {
     opacity: 1;
-    transition: opacity .3s linear; }
+    transform: scale(1.15) rotate(-5deg); }
   .card-portfolio:hover .card-portfolio__btn {
     background: #c5ddd9;
     color: #ffff; }
@@ -174,4 +175,7 @@ h1, h2, h3, h4, h5, h6, .title {
     border: none;
     border-radius: 0;
     width: 100px;
-    transition: all .3s; }
+    transition: all .3s;
+    margin-left: auto;
+    position: relative;
+    top: 1px; }
