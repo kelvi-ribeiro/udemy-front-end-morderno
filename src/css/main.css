@@ -131,6 +131,28 @@ h1, h2, h3, h4, h5, h6, .title {
   border-radius: 0;
   border: 1px solid transparent;
   position: relative; }
+  .card-portfolio::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: #777;
+    width: 50%;
+    height: 20px;
+    bottom: 12px;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(-3deg);
+    left: 5px; }
+  .card-portfolio::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: #777;
+    width: 50%;
+    height: 20px;
+    bottom: 12px;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(3deg);
+    right: 5px; }
   .card-portfolio__imagem {
     height: 230px;
     overflow: hidden; }
@@ -141,13 +163,15 @@ h1, h2, h3, h4, h5, h6, .title {
     opacity: 1;
     transition: opacity .3s linear; }
   .card-portfolio:hover .card-portfolio__btn {
-    background: #58b1a2; }
+    background: #c5ddd9;
+    color: #ffff; }
     .card-portfolio:hover .card-portfolio__btn:hover {
       background: #3fcab2; }
   .card-portfolio__btn {
     background: transparent;
+    color: #64a59a;
     display: block;
     border: none;
     border-radius: 0;
     width: 100px;
-    transition: background .3s; }
+    transition: all .3s; }
