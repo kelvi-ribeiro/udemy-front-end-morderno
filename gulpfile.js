@@ -15,6 +15,6 @@ gulp.task('server',function(){
             baseDir:'src'
         }
     })
-    gulp.watch('./src/css/*.css').on('change',brwoserSync.reload)
+    gulp.watch('./src/**/**').on('change',brwoserSync.reload)
     gulp.watch('./src/sass/**/*.scss',['sass'])
 })
