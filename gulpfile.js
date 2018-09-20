@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
-sass = require('gulp-sass')
+sass = require('gulp-sass'),
+brwoserSync = require('browser-sync')
 
 gulp.task('sass',function(){
     gulp.src('./src/sass/**/*.scss')
@@ -8,6 +9,12 @@ gulp.task('sass',function(){
     .pipe(gulp.dest('./src/css/'));
 })
 
-gulp.task('listen',() => {
+gulp.task('server',function(){
+    brwoserSync.init({
+        server:{
+            baseDir:'src'
+        }
+    })
+    gulp.watch('./src/css/*.css').on('change',brwoserSync.reload)
     gulp.watch('./src/sass/**/*.scss',['sass'])
 })

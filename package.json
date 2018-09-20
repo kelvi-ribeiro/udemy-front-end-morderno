@@ -8,6 +8,7 @@
     "font-awesome": "~4.7.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.0.0"
   },
@@ -20,9 +21,8 @@
     "create:dir:bootstrap": "mkdir -p src/components/bootstrap && cp -r node_modules/bootstrap/dist src/components/bootstrap",
     "create:dir:fontawesome": "mkdir -p src/components/font-awesome && cp -r node_modules/font-awesome/css src/components/font-awesome && cp -r node_modules/font-awesome/fonts src/components/font-awesome",
     "gulp": "gulp",
-    "gulp:watch":"gulp  --watch",
+    "gulp:watch": "gulp  --watch",
     "nodesass": "node-sass"
-    
   },
   "author": "Kelvi Martins <kelvi.ribeiro@unigranrio.br>",
   "license": "MIT"
