@@ -3,6 +3,18 @@ var gulp = require('gulp')
 ,   include = require('gulp-file-include')
 ,   brwoserSync = require('browser-sync')
 
+gulp.task('copy',function(){
+    gulp.src(
+            ['src/components/**/*',
+            'src/css/**/*',
+            'src/javascript/**/*',
+            'src/imagens/**/*'],
+            {
+        "base":"src"
+    })
+    .pipe(gulp.dest('dist'))
+})
+
 gulp.task('sass',function(){
     gulp.src('./src/sass/**/*.scss')
     .pipe(sass())
@@ -19,7 +31,7 @@ gulp.task('html',function(){
 gulp.task('server',function(){
     brwoserSync.init({
         server:{
-            baseDir:'src'
+            baseDir:'dist'
         }
     })
     gulp.watch('./src/**/**').on('change',brwoserSync.reload)
