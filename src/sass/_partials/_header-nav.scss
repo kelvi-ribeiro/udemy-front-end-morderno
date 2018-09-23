@@ -95,8 +95,18 @@
             height: $h;
             li{
                 display: inline-block;
-                }      
-           }
+                a{
+                    border-top: none;
+                    transition: all .5s ease-in-out;
+                    padding: 15px;
+                    &:hover{
+                        transform: translateY(.5em);
+                        box-shadow: 0 5px 150x -10px black;                       
+                        
+                    }
+                }
+             }      
+        }
 
     }
 }
