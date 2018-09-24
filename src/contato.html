@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Site Pessoa Silva Silveira</title>
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+
+<body>
+    @@include('./inc/nav.html')
+    
+    <div class="jumbotron header-animado">        
+        <div class="container">
+            <p class="header-animado__title">Vamos bater um paop ?</p>
+            <h1 class="header-animado__subtitle">
+                Entre em contato que eu responderei o mais rápido possível.                
+            </h1>
+        </div>
+       
+    </div>
+    <div class="container">    
+            <div class="row">
+            
+            <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+                <form id="contactForm" action="https://www.google.com/">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>  
+                        <input required type="text" id="nome" 
+                        class="form-control" placeholder="Nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email addres</label>  
+                        <input required type="email" id="email" 
+                        class="form-control" placeholder="Email">                        
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>  
+                        <textarea required type="text" id="mensagem" 
+                        class="form-control" placeholder="Mensagem">      
+                    </textarea>                  
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn  btn-success btn-lg">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+                
+            </div>
+         
+            
+        
+        </div>         
+            <hr>        
+    </div>
+    @@include('./inc/footer.html')                   
+        <script src="components/javascript/main.js"></script>
+        <script src="components/javascript/menu.js"></script>
+</body>
+
+</html>
