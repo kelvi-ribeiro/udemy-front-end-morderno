@@ -1,0 +1,17 @@
+%inputContato{
+    margin-bottom: 25px;
+    transition: background .3s ease-out;
+    &:focus{
+        background: lighten(#ccc,11%);
+    }
+}
+input[type="text"],
+input[type="email"]{
+    @extend %inputContato;
+    padding: 25px 15px;
+}
+
+textarea.form-control{
+    height: 100px;
+    @extend %inputContato;
+}
