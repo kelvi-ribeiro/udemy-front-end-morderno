@@ -3,6 +3,7 @@ var gulp = require('gulp')
 ,   include = require('gulp-file-include')
 ,   autoprefixer = require('gulp-autoprefixer')
 ,   uncss = require('gulp-uncss')
+,   imagemin = require('gulp-imagemin')
 ,   brwoserSync = require('browser-sync')
 ,   clean = require('gulp-clean')
 
@@ -15,8 +16,7 @@ gulp.task('copy', ['clean'],function(){
     gulp.src(
             ['src/components/**/*',
             'src/css/**/*',
-            'src/javascript/**/*',
-            'src/imagens/**/*'],
+            'src/javascript/**/*'],
             {
         "base":"src"
     })
@@ -36,6 +36,7 @@ gulp.task('html',function(){
     .pipe(gulp.dest('./dist/'))
 })
 
+
 gulp.task('uncss',['html'],function(){
     return gulp.src('./dist/components/**/*.css')
     .pipe(uncss({
@@ -44,12 +45,18 @@ gulp.task('uncss',['html'],function(){
     .pipe(gulp.dest('./dist/components'))
 })
 
-gulp.task('server',['uncss'],function(){
+gulp.task('imagemin',function(){
+    return gulp.src('./src/imagens/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/imagens/'))
+})
+
+gulp.task('server',['uncss','imagemin'],function(){
     brwoserSync.init({
         server:{
             baseDir:'dist'
         }
-    })
+})
     gulp.watch('./dist/**/**').on('change',brwoserSync.reload)
     gulp.watch('./src/sass/**/*.scss',['sass'])
     gulp.watch('./src/**/*.html',['html'])
