@@ -14,8 +14,7 @@ gulp.task('clean',function(){
 
 gulp.task('copy', ['clean'],function(){
     gulp.src(
-            ['src/components/**/*',
-            'src/css/**/*',
+            ['src/components/**/*',            
             'src/javascript/**/*'],
             {
         "base":"src"
@@ -51,7 +50,7 @@ gulp.task('imagemin',function(){
     .pipe(gulp.dest('./dist/imagens/'))
 })
 
-gulp.task('server',['uncss','imagemin'],function(){
+gulp.task('server',['uncss','imagemin','sass','copy'],function(){
     brwoserSync.init({
         server:{
             baseDir:'dist'
