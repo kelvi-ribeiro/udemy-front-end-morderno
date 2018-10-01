@@ -1,6 +1,6 @@
 .rodape{
-    background:lighten($main-color,30%);
-    color:white;
+    background:lighten($main-color,30);
+    color:darken($main-color,20);
     padding: 1em 0;
     ul{
         overflow: auto;
@@ -15,7 +15,7 @@
         }
         li a{
             font-size: 1.5em;
-            color:white;
+            color:inherit;
             display: block;
             text-align: right;
         }
