@@ -7,7 +7,8 @@ var gulp = require('gulp')
 ,   cssnano = require('gulp-cssnano')
 ,   uglify = require('gulp-uglify')
 ,   concat = require('gulp-concat')
-,   brwoserSync = require('browser-sync')
+,   browserSync = require('browser-sync')
+,   rename = require('gulp-rename')
 ,   clean = require('gulp-clean')
 
 gulp.task('clean',function(){
@@ -63,25 +64,34 @@ gulp.task('build-js',function(){
     .pipe(gulp.dest('./dist/javascript/'))
 })
 
-gulp.task('svgmin',function(){
-    return gulp.src('src/inc/icons/*.svg')
-    .pipe()
-    .pipe()
+gulp.task('svgmin', function(){
+        return gulp.src(['src/inc/icons/*.svg', '!src/inc/icons/*.min.svg'])
+        .pipe(imagemin())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('src/inc/icons/'))
 })
-
 gulp.task('default',['copy'],function(){
-    gulp.start('uncss','imagemin','sass','build-js')
+    gulp.start('uncss','imagemin','sass','build-js','svgmin')
 })
 
-gulp.task('server',function(){
-    brwoserSync.init({
-        server:{
-            baseDir:'dist'
+gulp.task('server', function(){
+    
+    browserSync.init({
+        server: {
+            baseDir: 'dist'
         }
+    })
+    
+    gulp.watch('./dist/**/*').on('change', browserSync.reload)
+    
+    gulp.watch('./src/sass/**/*.scss', ['sass'])
+    gulp.watch('./src/**/*.html', ['html'])
+    gulp.watch('./src/javascript/**/*', ['build-js'])    
+    gulp.watch([
+        './src/inc/icons/*.svg',
+        '!./src/inc/icons/*.min.svg'
+        ], ['svgmin'])
 })
-    gulp.watch('./dist/**/**').on('change',brwoserSync.reload)
-    gulp.watch('./src/sass/**/*.scss',['sass'])
-    gulp.watch('./src/**/*.html',['html'])
-    gulp.watch('./src/javascript/**/*',['build-js'])
-    gulp.watch('./src/inc/icons/*.svg','svgmin')
-})
+

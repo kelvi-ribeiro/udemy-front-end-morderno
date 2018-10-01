@@ -20,10 +20,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 /* makes the font 33% larger relative to the icon container */
-.fa-fw {
-  width: 1.28571429em;
-  text-align: center;
-}
 /* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
@@ -32,12 +28,6 @@
    readers do not read off random characters that represent icons */
 .fa-bars:before {
   content: "\f0c9";
-}
-.fa-linkedin:before {
-  content: "\f0e1";
-}
-.fa-dribbble:before {
-  content: "\f17d";
 }
 .sr-only {
   position: absolute;
