@@ -1,8 +1,13 @@
 .rodape{
+    svg{
+        width: 22px;
+        height: 22px;
+    }
     .color-icon{
-        fill:red;
+        fill:darken($main-color,10);
+        transition: fill .5s;
         &:hover{
-            fill:blue;
+            fill:darken($main-color,30);;
         }
     }
     background:lighten($main-color,30);
