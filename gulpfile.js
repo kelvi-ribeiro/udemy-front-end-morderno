@@ -63,6 +63,12 @@ gulp.task('build-js',function(){
     .pipe(gulp.dest('./dist/javascript/'))
 })
 
+gulp.task('svgmin',function(){
+    return gulp.src('src/inc/icons/*.svg')
+    .pipe()
+    .pipe()
+})
+
 gulp.task('default',['copy'],function(){
     gulp.start('uncss','imagemin','sass','build-js')
 })
@@ -77,5 +83,5 @@ gulp.task('server',function(){
     gulp.watch('./src/sass/**/*.scss',['sass'])
     gulp.watch('./src/**/*.html',['html'])
     gulp.watch('./src/javascript/**/*',['build-js'])
-    
+    gulp.watch('./src/inc/icons/*.svg','svgmin')
 })
